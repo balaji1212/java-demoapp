@@ -1,0 +1,33 @@
+- name: wget packages
+  hosts: demoservers
+  remote_user: root
+
+  tasks:
+  - name: uninstall wget
+    yum: pkg=wget state=absent
+
+  - name: stop docker 
+    command: docker stop devops-project-container
+    ignore_errors: yes
+
+  - name: remove stopped container
+    command: docker rm devops-project-container
+    ignore_errors: yes
+
+  - name: remove image
+    command: docker rmi devops-project
+    ignore_errors: yes
+
+    # - name: remove dangling images
+    #   command: docker rmi $(docker images -f "dangling=true" -q)
+  
+  #- name: check image is removed
+   # pause:
+    #  seconds: 20
+
+    # - name: build docker image using war
+    #command: docker build -t devops-project .
+
+    #- name: run docker image
+    #command: docker run -d --name "devops-project-container" -p 8080:8080 devops-project
+
