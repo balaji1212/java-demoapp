@@ -1,6 +1,7 @@
 - name: wget packages
-  hosts: demoservers
+  hosts: aws
   remote_user: root
+  become: yes
 
   tasks:
   - name: uninstall wget
