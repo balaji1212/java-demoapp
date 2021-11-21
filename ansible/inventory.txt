@@ -10,5 +10,5 @@ target2
 [demoservers]
 demoserver1
 
-[demoservers]
-aws
+[aws]
+ec2
