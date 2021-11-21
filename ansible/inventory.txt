@@ -1,6 +1,6 @@
 target1 ansible_host=192.168.1.6 ansible_ssh_pass=osboxes.org
 target2 ansible_host=192.168.1.7 ansible_ssh_pass=osboxes.org
-demoserver1 ansible_host=192.168.0.107 ansible_ssh_pass=osboxes.org
+demoserver1 ansible_host=192.168.0.110 ansible_ssh_pass=osboxes.org
 
 [testservers]
 target1
